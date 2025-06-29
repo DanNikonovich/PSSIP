@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan Nikonovich | Портфолио и Форма</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Навигация между страницами -->
+    <div class="page-nav">
+        <button class="active" onclick="showPage('portfolio-page')">Портфолио</button>
+        <button onclick="showPage('form-page')">Форма</button>
+    </div>
+
+    <!-- Страница портфолио -->
+    <div id="portfolio-page" class="page active">
+        <header class="portfolio-header">
+            <div class="container">
+                <h1 class="portfolio-title animated">Dan Nikonovich</h1>
+                <p class="portfolio-subtitle animated" style="animation-delay: 0.2s">Web Designer & Developer</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="about-section">
+                <div class="container">
+                    <div class="profile">
+                        <img src="Image/MIUMIU.JPG" alt="Dan Nikonovich" class="profile-image rounded-image float">
+                        <div class="profile-text">
+                            <h2 class="animated" style="animation-delay: 0.4s">Hello everyone, я начинающий web-дизайнер.</h2>
+                            <p class="animated" style="animation-delay: 0.6s">Создаю современные и функциональные веб-интерфейсы с акцентом на пользовательский опыт.</p>
+                            
+                            <!-- Кнопка скачивания архива -->
+                            <a href="#" class="btn-download animated" style="animation-delay: 0.8s" id="downloadBtn">
+                                <i class="fas fa-file-archive"></i> Скачать портфолио (ZIP)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portfolio-section">
+                <div class="container">
+                    <h2 class="section-title animated" style="animation-delay: 1s">Мои работы</h2>
+                    <div class="portfolio-item pulse">
+                        <h3>Дизайн сайта <i>JustDoIt</i></h3>
+                        <div class="video-container">
+                            <video controls preload="metadata" poster="Image/Кроссы_ZOOM X.png" class="portfolio-video">
+                                <source type="video/mp4" src="Media/Just Do It 1 lesson.mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="schedule-section">
+                <div class="container">
+                    <h3 class="section-title animated" style="animation-delay: 1.2s">Мой график</h3>
+                    <p class="animated" style="animation-delay: 1.4s">Если Вы захотите узнать мой не постоянный график, то смотрите ПЗТ-40</p>
+                    <a href="http://ggpk.by/Raspisanie/Files/PZT.html" class="btn animated" style="animation-delay: 1.6s">Посмотреть расписание</a>
+                </div>
+            </section>
+
+            <section class="music-section">
+                <div class="container">
+                    <h3 class="section-title animated" style="animation-delay: 1.8s">Моя любимая песня</h3>
+                    <div class="audio-player pulse">
+                        <audio src="Media/say-yes-to-heaven.mp3" type="audio/mpeg" controls></audio>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lists-section">
+                <div class="container">
+                    <div class="lists-grid">
+                        <div class="list-card animated" style="animation-delay: 0.2s">
+                            <h4>Маркированный список</h4>
+                            <ul class="styled-list">
+                                <li>TRPO</li>
+                                <li>PSSIP</li>
+                                <li>ZAECH</li>
+                            </ul>
+                        </div>
+
+                        <div class="list-card animated" style="animation-delay: 0.4s">
+                            <h4>Нумерованный список</h4>
+                            <ol class="styled-list">
+                                <li>Первый</li>
+                                <li>Второй</li>
+                                <li>Третий</li>
+                            </ol>
+                        </div>
+
+                        <div class="list-card animated" style="animation-delay: 0.6s">
+                            <h4>Список определений</h4>
+                            <dl class="styled-list">
+                                <dt>HTML</dt>
+                                <dd>Язык разметки гипертекста</dd>
+                                <dt>CSS</dt>
+                                <dd>Таблицы стилей</dd>
+                            </dl>
+                        </div>
+
+                        <div class="list-card animated" style="animation-delay: 0.8s">
+                            <h4>Вложенный список</h4>
+                            <ul class="styled-list">
+                                <li>Фрукты
+                                    <ul>
+                                        <li>Яблоко</li>
+                                        <li>Банан</li>
+                                    </ul>
+                                </li>
+                                <li>Овощи
+                                    <ul>
+                                        <li>Морковь</li>
+                                        <li>Огурец</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <div class="container">
+                    <h2 class="section-title animated" style="animation-delay: 1s">Пример таблицы</h2>
+                    <div class="table-container pulse">
+                        <table>
+                            <caption>Демонстрационная таблица</caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Town</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Аnna</td>
+                                    <td>25</td>
+                                    <td>Minsk</td>
+                                </tr>
+                                <tr>
+                                    <td>Ivan</td>
+                                    <td>30</td>
+                                    <td>Warshawa</td>
+                                </tr> 
+                                <tr>
+                                    <th colspan="3">Unite</th>
+                                </tr>
+                                <tr>
+                                    <td>Оne</td>
+                                    <td>Two</td>
+                                    <td>Тree</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">Ячейка на четыре строки</td>
+                                    <td>Ячейка 1</td>
+                                    <td>Ячейка 2</td>
+                                </tr>
+                                <tr>
+                                    <td>Ячейка 3</td>
+                                    <td>Ячейка 4</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Ячейка 5</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Ячейка 6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-nav">
+                    <a href="#Top" class="nav-link pulse"><i class="fas fa-arrow-up"></i> Наверх</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/__nikonovich__?utm_source=qr&igsh=anl2Ymg5eTFseGZq" class="social-link pulse"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/DanNikonovich/Fine_Sluh.git" class="social-link pulse"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/dikonovichnaniil" class="social-link pulse"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="copyright">© 2025 Dan Nikonovich. Все права защищены.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Страница формы -->
+    <div id="form-page" class="page">
+        <header class="form-header">
+            <div class="container">
+                <h1 class="form-title">Моя форма</h1>
+            </div>
+        </header>
+
+        <div class="form-container">
+            <header class="form-header-inner">
+                <a href="javascript:void(0);" onclick="showPage('portfolio-page')" class="back-link"><i class="fas fa-arrow-left"></i> На главную</a>
+                <h1>Моя форма</h1>
+            </header>
+
+            <form action="action_form.php" method="POST" class="styled-form">
+                <section class="form-section">
+                    <h2>Основная информация</h2>
+                    <div class="form-group">
+                        <label for="firstname">Имя:</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Введите ваше имя">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastname">Фамилия:</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Введите вашу фамилию">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" placeholder="Придумайте пароль">
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Возраст</h2>
+                    <p>Сколько Вам лет?</p>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="18" checked>
+                            <span class="radio-custom"></span>
+                            младше 18
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="18-24">
+                            <span class="radio-custom"></span>
+                            от 18 до 24
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="25-34">
+                            <span class="radio-custom"></span>
+                            от 25 до 35
+                        </label>
+                        
+                        <label class="radio-option">
+                            <input type="radio" name="age" value="35-50">
+                            <span class="radio-custom"></span>
+                            более 35
+                        </label>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Музыкальные предпочтения</h2>
+                    <p>Какие музыкальные жанры Вы любите?</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="musik" value="juze" checked>
+                            <span class="checkbox-custom"></span>
+                            Джаз
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="musik" value="classic" checked>
+                            <span class="checkbox-custom"></span>
+                            Классика
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="musik" value="rock">
+                            <span class="checkbox-custom"></span>
+                            Рок
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="musik" value="pop">
+                            <span class="checkbox-custom"></span>
+                            Поп
+                        </label>
+                        
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="musik" value="kantry">
+                            <span class="checkbox-custom"></span>
+                            Кантри
+                        </label>
+                    </div>
+                </section>
+
+                <fieldset class="form-fieldset">
+                    <legend>Контактная информация</legend>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile">Мобильный:</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="+XXX (XXX) XXX-XX-XX"
+                               pattern="^\+\d{3} \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон (Беларусь):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+375 (XX) XXX-XX-XX"
+                               pattern="^\+375 \(\d{2}\) \d{3}-\d{2}-\d{2}$" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fax">Факс:</label>
+                        <input type="text" id="fax" name="fax" placeholder="Номер факса">
+                    </div>
+                </fieldset>
+
+                <section class="form-section">
+                    <h2>Соглашение</h2>
+                    <div class="form-group">
+                        <label>Ознакомьтесь с соглашением:</label>
+                        <textarea cols="24" rows="3" name="about" readonly class="form-textarea">
+Условия нашего соглашения:
+1. Не передавать данные третьим лицам
+2. Использовать информацию только по назначению
+3. Соблюдать конфиденциальность</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Ваше мнение о этом соглашении:</label>
+                        <textarea id="comments" name="comments" cols="24" rows="4" 
+                                  placeholder="Введите свой комментарий..." class="form-textarea"></textarea>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2>Дополнительные опции</h2>
+                    <div class="form-group">
+                        <label for="form_select">Выберите вариант:</label>
+                        <select id="form_select" name="form_select" class="form-select">
+                            <option value="Значение 1">Первый</option>
+                            <option value="Значение 2">Второй</option>
+                            <option selected="selected" value="Значение 3">Третий</option>
+                            <option value="Значение 4">Четвертый</option>
+                            <option value="Значение 5">Пятый</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="form_select_multiple">Выберите несколько вариантов:</label>
+                        <select id="form_select_multiple" name="form_select" size="5" multiple="multiple" class="form-select multiple">
+                            <option selected="selected" value="Значение 1">Первый вариант</option>
+                            <option value="Значение 2">Второй вариант</option>
+                            <option value="Значение 3">Третий вариант</option>
+                            <option value="Значение 4">Четвертый вариант</option>
+                            <option value="Значение 5">Пятый вариант</option>
+                            <option value="Значение 6">Шестой вариант</option>
+                        </select>
+                        <small class="form-hint">Для выбора нескольких вариантов удерживайте Ctrl</small>
+                    </div>
+                </section>
+
+                <section class="form-section newsletter">
+                    <h2>Подписка на рассылку</h2>
+                    <div class="newsletter-group">
+                        <input type="email" name="email" placeholder="Ваш email" class="newsletter-input">
+                        <button type="submit" name="podpisatsya" class="newsletter-button">Подписаться</button>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="submit" class="form-btn submit-btn">Отправить форму</button>
+                    <button type="reset" class="form-btn reset-btn">Очистить форму</button>
+                </div>
+            </form>
+
+            <footer class="form-footer">
+                <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i> Наверх</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Переключение между страницами
+        function showPage(pageId) {
+            // Скрываем все страницы
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Показываем выбранную страницу
+            document.getElementById(pageId).classList.add('active');
+            
+            // Обновляем активную кнопку в навигации
+            document.querySelectorAll('.page-nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Находим кнопку, соответствующую странице, и делаем её активной
+            if (pageId === 'portfolio-page') {
+                document.querySelector('.page-nav button:nth-child(1)').classList.add('active');
+            } else {
+                document.querySelector('.page-nav button:nth-child(2)').classList.add('active');
+            }
+            
+            // Прокручиваем вверх
+            window.scrollTo(0, 0);
+        }
+
+        // Обработчик для кнопки скачивания
+        document.getElementById('downloadBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Здесь можно добавить реальную ссылку на архив
+            // В данном примере просто имитируем скачивание
+            alert('На реальном сайте здесь бы началось скачивание архива с портфолио.');
+            
+            // Для реального использования:
+            // window.location.href = '../lr 1-4/Rar/StressLess.rar';
+        });
+        
+        // Добавляем анимацию при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
