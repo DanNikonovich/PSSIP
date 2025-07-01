@@ -1,0 +1,96 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+.fio {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3498db;
+    text-align: center;
+    margin: 20px 0;
+}
+#imageContainer {
+    text-align: center;
+    margin: 25px 0;
+    position: relative;
+}
+#myImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#styleButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#styleButton:hover {
+    background-color: #2980b9;
+}
+#favoriteLink {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+#favoriteLink:hover {
+    background-color: #27ae60;
+}
+.info-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+}
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+/* Стили для изменённого изображения */
+.modified-image {
+    width: 50% !important;
+    height: auto !important;
+    border: 2px solid #3498db !important;
+    position: fixed !important;
+    left: 20px !important;
+    bottom: 20px !important;
+    z-index: 1000 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    padding: 5px !important;
+    background-color: #ecf0f1 !important;
+}

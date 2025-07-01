@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание по JavaScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>JavaScript Задание</h1>
+        
+        <!-- Задание 1 -->
+        <div class="fio">Никонович Даниил Александрович</div>
+        
+        <div id="imageContainer">
+            <img id="myImage" src="/Самостоятельная/Вёрстка/cat.jpg" alt="Красивое изображение природы">
+        </div>
+        
+        <div class="info-box" id="imagesInfo"></div>
+        
+        <button id="styleButton">Сменить стиль изображения</button>
+    </div>
+
+    <script>
+        // Задание 2
+        setTimeout(function() {
+            // 2.1 Получить информацию об изображениях на странице
+            const images = document.getElementsByTagName('img');
+            let imagesInfo = "<h3>Информация об изображениях на странице:</h3><ul>";
+            
+            for(let i = 0; i < images.length; i++) {
+                imagesInfo += `<li>Изображение ${i+1}:<br> 
+                              Размер: ${images[i].naturalWidth}px × ${images[i].naturalHeight}px<br>
+                              Источник: ${images[i].src}<br>
+                              Альтернативный текст: ${images[i].alt}</li>`;
+            }
+            
+            imagesInfo += "</ul>";
+            document.getElementById('imagesInfo').innerHTML = imagesInfo;
+            
+            // 2.3 Создать и добавить ссылку после элемента №2 (imageContainer)
+            const link = document.createElement('a');
+            link.href = "https://github.com";
+            link.textContent = "Ссылка на мой любимый сайт - GitHub";
+            link.id = "favoriteLink";
+            link.target = "_blank";
+            
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.parentNode.insertBefore(link, imageContainer.nextSibling);
+            
+        }, 5000);
+        
+        // Задание 3
+        document.getElementById('styleButton').addEventListener('click', function() {
+            const image = document.getElementById('myImage');
+            
+            // Переключаем класс с новыми стилями
+            image.classList.toggle('modified-image');
+            
+            // Изменяем текст кнопки после применения стилей
+            if (image.classList.contains('modified-image')) {
+                this.textContent = "Вернуть исходный стиль";
+                this.style.backgroundColor = "#2ecc71";
+            } else {
+                this.textContent = "Сменить стиль изображения";
+                this.style.backgroundColor = "#3498db";
+            }
+        });
+        
+        // Задание 4
+        window.onload = function() {
+            // 4.1 Получить информацию о браузере
+            let browserName;
+            const userAgent = navigator.userAgent;
+            
+            if (userAgent.indexOf("Firefox") > -1) {
+                browserName = "Mozilla Firefox";
+            } else if (userAgent.indexOf("SamsungBrowser") > -1) {
+                browserName = "Samsung Browser";
+            } else if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
+                browserName = "Opera";
+            } else if (userAgent.indexOf("Trident") > -1) {
+                browserName = "Microsoft Internet Explorer";
+            } else if (userAgent.indexOf("Edge") > -1) {
+                browserName = "Microsoft Edge";
+            } else if (userAgent.indexOf("Chrome") > -1) {
+                browserName = "Google Chrome";
+            } else if (userAgent.indexOf("Safari") > -1) {
+                browserName = "Apple Safari";
+            } else {
+                browserName = "Неизвестный браузер";
+            }
+            
+            let browserInfo = `
+                <h2>Информация о браузере</h2>
+                <p><strong>Название:</strong> ${browserName}</p>
+                <p><strong>Версия:</strong> ${navigator.appVersion}</p>
+                <p><strong>Пользовательский агент:</strong><br> ${navigator.userAgent}</p>
+                <p><strong>Платформа:</strong> ${navigator.platform}</p>
+            `;
+            
+            // 4.2 Открыть новое окно с информацией
+            const newWindow = window.open("", "", "width=500,height=300,scrollbars=yes");
+            newWindow.document.title = "Вариант 34 Никонович Д. А.";
+            newWindow.document.body.style.fontFamily = "'Roboto', sans-serif";
+            newWindow.document.body.style.padding = "20px";
+            newWindow.document.body.style.color = "#333";
+            newWindow.document.body.innerHTML = `
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                    ${browserInfo}
+                    <p><strong>Размер экрана:</strong> ${screen.width}px × ${screen.height}px</p>
+                    <p><strong>Глубина цвета:</strong> ${screen.colorDepth} бит</p>
+                </div>
+            `;
+        };
+    </script>
+
+    <footer>
+        <p>Выполнил: Никонович Даниил Александрович</p>
+        <p>Дата: <span id="currentDate"></span></p>
+    </footer>
+
+    <script>
+        // Добавляем текущую дату в футер
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('ru-RU', options);
+    </script>
+</body>
+</html>
