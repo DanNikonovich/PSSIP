@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант 41</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- script 1 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('showYearBtn').addEventListener('click', function() {
+                const now = new Date();
+                const formattedDate = `${now.getSeconds()}-${now.getHours()}`;
+                                alert(formattedDate);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Задание 1 -->
+        <section class="task">
+            <h2>Задание 1: Работа с объектом Date</h2>
+            <button id="showYearBtn">Показать год</button>
+        </section>
+
+        <!-- Задание 2 -->
+        <section class="task">
+            <h2>Задание 2: Циклы</h2>
+            <div id="nameOutput"></div>
+        </section>
+
+        <!-- Задание 3 -->
+        <section class="task">
+            <h2>Задание 3: Массивы</h2>
+            <div id="arrayOutput"></div>
+        </section>
+
+        <!-- Задание 4 -->
+        <section class="task">
+        <h2>Задание 4: Работа с объектом Math</h2>
+        
+        <!-- Пользовательская форма -->
+        <div class="form-group">
+            <label for="xValue">Введите значение x:</label>
+            <input type="number" id="xValue" step="0.01">
+            <button id="calculateBtn">Рассчитать</button>
+        </div>
+        
+        <div id="resultOutput"></div>
+        <canvas id="graphCanvas" width="400" height="400"></canvas>
+        </section>
+
+         <!-- Задание 5 -->
+        <section class="task">
+            <h2>Задание 5: Работа со строками String</h2>
+            <div id="stringOutput"></div>
+        </section>
+    </div>
+
+    <!-- script 2 -->
+    <script>
+            const nameOutput = document.getElementById('nameOutput');
+    const firstName = "Nikonovich";
+    const lastName = "Dan";
+        
+    for (let i = 0; i < 41; i++) { // 41 - номер варианта
+        nameOutput.textContent += `${firstName} ${lastName} `;
+    }
+    </script>
+
+    <!-- script 3 -->
+    <script>
+    const arrayOutput = document.getElementById('arrayOutput');
+
+    // Создаем массив из 7 случайных элементов (от 1 до 100)
+    let arr = Array.from({length: 7}, () => Math.floor(Math.random() * 100) + 1);
+    arrayOutput.innerHTML += `<p>Исходный массив: [${arr.join(', ')}]</p>`;
+
+    // Добавляем новый случайный элемент
+    const newElement = Math.floor(Math.random() * 100) + 1;
+    arr.push(newElement);
+    arrayOutput.innerHTML += `<p>Добавлен элемент: ${newElement}</p>`;
+    arrayOutput.innerHTML += `<p>Массив после добавления: [${arr.join(', ')}]</p>`;
+
+    // Удаляем минимальный элемент
+    const minValue = Math.min(...arr);
+    const minIndex = arr.indexOf(minValue);
+    arr.splice(minIndex, 1);
+    arrayOutput.innerHTML += `<p>Удалён минимальный элемент: ${minValue}</p>`;
+    arrayOutput.innerHTML += `<p>Массив после удаления: [${arr.join(', ')}]</p>`;
+    </script>
+
+</body>
+<!-- script 4 -->
+<script src="scripts/math-script.js"></script>
+<!-- script 5 -->
+<script src="scripts/string-script.js"></script>
+</html>
