@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 Flex Blocks</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Шапка сайта (блок 1) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Логотип</div>
+            
+            <nav class="nav">
+                <a href="#">Главная</a>
+                <a href="#">О нас</a>
+                <a href="#">Услуги</a>
+                <a href="#">Контакты</a>
+            </nav>
+            
+            <div class="search">
+                <input type="text" placeholder="Поиск...">
+                <button>Найти</button>
+            </div>
+            
+            <div class="burger-menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="main">
+        <!-- Блоки 2-5 -->
+        <section class="hero">
+            <div class="hero-item hero-main">Главный баннер</div>
+            <div class="hero-item hero-secondary">
+                <div class="content-sidebar">
+                    <!-- Форма регистрации -->
+                    <form id="registrationForm" class="registration-form" novalidate>
+                        <h2>Анкета регистрации участника программы "пРИГЛАшаем"</h2>
+                        <p>После регистрации Вы сможете обменивать накопленные бонусы на скидки при совершении покупок в аптеках сети "Ригла".</p>
+                        
+                        <div class="form-group">
+                            <label for="barcode">Введите штрих-код Вашей карты<span class="required">*</span>:</label>
+                            <input type="text" id="barcode" name="barcode" required maxlength="13" pattern="[0-9]{13}">
+                            <div class="error-message" id="barcode-error">Пожалуйста, введите 13-значный штрих-код</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="name">Имя<span class="required">*</span>:</label>
+                            <input type="text" id="name" name="name" required minlength="2" maxlength="30" pattern="[А-Яа-яЁё\s]+">
+                            <div class="error-message" id="name-error">Пожалуйста, введите имя (только буквы, 2-30 символов)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="middlename">Отчество:</label>
+                            <input type="text" id="middlename" name="middlename" maxlength="30" pattern="[А-Яа-яЁё\s]*">
+                            <div class="error-message" id="middlename-error">Можно использовать только буквы (до 30 символов)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthdate">Дата рождения<span class="required">*</span>:</label>
+                            <input type="date" id="birthdate" name="birthdate" required max="2023-12-31">
+                            <div class="error-message" id="birthdate-error">Пожалуйста, введите корректную дату рождения (не будущую дату)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="gender">Пол<span class="required">*</span>:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Выберите пол</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                            <div class="error-message" id="gender-error">Пожалуйста, выберите пол</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Мобильный телефон<span class="required">*</span>:</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   pattern="\+375\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" 
+                                   placeholder="+375 XX XXX XX XX"
+                                   maxlength="17">
+                            <div class="error-message" id="phone-error">Пожалуйста, введите телефон в формате +375 XX XXX XX XX</div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail<span class="required">*</span>:</label>
+                            <input type="email" id="email" name="email" required maxlength="50">
+                            <div class="error-message" id="email-error">Пожалуйста, введите корректный email (максимум 50 символов)</div>
+                        </div>
+                        
+                        <p><span class="required">*</span> Поля, обязательные для заполнения</p>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="receive_info">
+                                Я желаю получать информацию об акциях программы, скидках и распродажах
+                            </label>
+                            <label>
+                                <input type="checkbox" name="dont_receive_info">
+                                Я не желаю получать информацию об акциях программы
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmation">Код подтверждения<span class="required">*</span>:</label>
+                            <input type="text" id="confirmation" name="confirmation" required 
+                                   pattern="[0-9]{4}" maxlength="4">
+                            <div class="error-message" id="confirmation-error">Пожалуйста, введите 4-значный код подтверждения</div>
+                            <p><a href="#" id="resend-sms">Выслать SMS еще раз</a></p>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="agree" id="agree" checked required>
+                                Я согласен на обработку персональных данных и ознакомлен с правилами программы
+                            </label>
+                            <div class="error-message" id="agree-error">Необходимо ваше согласие</div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Проверить</button>
+                    </form>
+                </div>
+            </div>
+            <div class="hero-item hero-secondary">
+                <div class="content-main">
+                    <!-- Микросетка товара по акции -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img class="img-c" src="/Самостоятельная/Вёрстка/cat.jpg" alt="Изображение товара">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-badge">По акции</span>
+                            <h3 class="product-title">Фоторамка сердце большая белая</h3>
+                            <div class="product-availability">✔ Есть в наличии</div>
+                            <div class="product-price">
+                                29.90 руб.
+                                <span class="product-old-price">45.90</span>
+                            </div>
+                            <div class="product-actions">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn">-</button>
+                                    <input type="text" class="quantity-input" value="1">
+                                    <button class="quantity-btn">+</button>
+                                </div>
+                                <button class="add-to-cart">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-item hero-cta">Призыв к действию</div>
+        </section>
+
+        <!-- Блоки 6-13 -->
+        <section class="features">
+            <div class="feature-card">Фича 1</div>
+            <div class="feature-card">Фича 2</div>
+            <div class="feature-card">Фича 3</div>
+            <div class="feature-card">Фича 4</div>
+            <div class="feature-card">Фича 5</div>
+            <div class="feature-card">Фича 6</div>
+            <div class="feature-card">Фича 7</div>
+            <div class="feature-card">Фича 8</div>
+        </section>
+
+        <!-- Блоки 14-17 -->
+        <section class="content">
+            <div class="content-main">Основной контент</div>
+            <div class="content-sidebar">Сайдбар</div>
+            <div class="content-extra">Дополнительно 1</div>
+            <div class="content-extra">Дополнительно 2</div>
+        </section>
+
+        <!-- Блоки 18-21 -->
+        <section class="testimonials">
+            <div class="testimonial">Отзыв 1</div>
+            <div class="testimonial">Отзыв 2</div>
+            <div class="testimonial">Отзыв 3</div>
+            <div class="testimonial">Отзыв 4</div>
+        </section>
+
+        <!-- Блоки 22-23 -->
+        <section class="cta-section">
+            <div class="cta-left">Спецпредложение</div>
+            <div class="cta-right">Форма подписки</div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта (блок 24) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">Контакты</div>
+            <div class="footer-section">Навигация</div>
+            <div class="footer-section">Соцсети</div>
+            <div class="footer-section">Копирайт</div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const nav = document.querySelector('.nav');
+            
+            burgerMenu.addEventListener('click', function() {
+                // Переключаем класс active у бургер-меню
+                this.classList.toggle('active');
+                // Переключаем класс active у навигации
+                nav.classList.toggle('active');
+                
+                // Блокируем/разблокируем прокрутку страницы при открытом меню
+                if (nav.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Закрываем меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    burgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Обработчики для кнопок количества товара
+            const quantityBtns = document.querySelectorAll('.quantity-btn');
+            quantityBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('.quantity-input');
+                    let value = parseInt(input.value);
+                    
+                    if (this.textContent === '+' && value < 99) {
+                        input.value = value + 1;
+                    } else if (this.textContent === '-' && value > 1) {
+                        input.value = value - 1;
+                    }
+                });
+            });
+
+            // Валидация формы
+            const form = document.getElementById('registrationForm');
+            const inputs = form.querySelectorAll('input, select');
+            
+            // Добавляем обработчики событий для всех полей ввода
+            inputs.forEach(input => {
+                // Проверка при потере фокуса
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                // Сброс ошибки при начале ввода
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('invalid')) {
+                        this.classList.remove('invalid');
+                        const errorElement = document.getElementById(`${this.id}-error`);
+                        if (errorElement) errorElement.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Обработчик отправки формы
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                inputs.forEach(input => {
+                    if (!validateField(input)) {
+                        isValid = false;
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Форма успешно отправлена!');
+                    // Здесь можно отправить форму на сервер
+                    // form.submit();
+                } else {
+                    // Прокрутка к первой ошибке
+                    const firstError = form.querySelector('.invalid');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+            
+            // Функция валидации отдельного поля
+            function validateField(field) {
+                const errorElement = document.getElementById(`${field.id}-error`);
+
+                // Проверка на обязательное заполнение
+                if (field.required && !field.value.trim()) {
+                    showError(field, errorElement, 'Это поле обязательно для заполнения');
+                    return false;
+                }
+
+                // Специальная проверка для даты рождения
+                if (field.id === 'birthdate') {
+                    const today = new Date();
+                    const birthDate = new Date(field.value);
+                    if (birthDate > today) {
+                        showError(field, errorElement, 'Дата рождения не может быть в будущем');
+                        return false;
+                    }
+                    return true;
+                }
+
+                // Проверка максимальной длины (только для полей, где это имеет смысл)
+                if (field.maxLength > 0 && field.value.length > field.maxLength) {
+                    showError(field, errorElement, `Максимальная длина: ${field.maxLength} символов`);
+                    return false;
+                }
+    
+
+                // Проверка на обязательное заполнение
+                if (field.required && !field.value.trim()) {
+                    showError(field, errorElement, 'Это поле обязательно для заполнения');
+                    return false;
+                }
+                
+                // Проверка минимальной длины
+                if (field.minLength && field.value.length < field.minLength) {
+                    showError(field, errorElement, `Минимальная длина: ${field.minLength} символов`);
+                    return false;
+                }
+                
+                // Проверка максимальной длины
+                if (field.maxLength && field.value.length > field.maxLength) {
+                    showError(field, errorElement, `Максимальная длина: ${field.maxLength} символов`);
+                    return false;
+                }
+                
+                // Проверка по pattern
+                if (field.pattern) {
+                    const regex = new RegExp(field.pattern);
+                    if (!regex.test(field.value)) {
+                        let message = 'Неверный формат';
+                        
+                        // Специальные сообщения для разных полей
+                        if (field.id === 'phone') {
+                            message = 'Введите телефон в формате +375 XX XXX XX XX';
+                        } else if (field.id === 'barcode') {
+                            message = 'Штрих-код должен содержать 13 цифр';
+                        } else if (field.id === 'name' || field.id === 'middlename') {
+                            message = 'Можно использовать только буквы';
+                        } else if (field.id === 'confirmation') {
+                            message = 'Код должен содержать 4 цифры';
+                        }
+                        
+                        showError(field, errorElement, message);
+                        return false;
+                    }
+                }
+                
+                // Специальная проверка для email
+                if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        showError(field, errorElement, 'Введите корректный email');
+                        return false;
+                    }
+                }
+                
+                // Специальная проверка для чекбокса согласия
+                if (field.id === 'agree' && !field.checked) {
+                    showError(field, errorElement, 'Необходимо ваше согласие');
+                    return false;
+                }
+                
+                // Если все проверки пройдены
+                if (errorElement) errorElement.style.display = 'none';
+                field.classList.remove('invalid');
+                return true;
+            }
+            
+            // Функция показа ошибки
+            function showError(field, errorElement, message) {
+                field.classList.add('invalid');
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    errorElement.style.display = 'block';
+                }
+            }
+            
+            // Обработчик для кнопки "Выслать SMS еще раз"
+            document.getElementById('resend-sms').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('SMS с кодом подтверждения отправлено повторно');
+                // Здесь можно добавить реальную логику отправки SMS
+            });
+        });
+    </script>
+</body>
+</html>

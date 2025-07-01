@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 200px 400px 100px;
+  grid-gap: 20px;
+  align-items: center;
+  background-color: #1f2d3d;
+  padding: 20px;
+  color: white;
+}
+
+.nav a {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+
+.banner {
+  grid-column: span 4;
+  background: #e74c3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+
+.cta {
+  grid-column: span 4;
+  background: #f1c40f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature {
+  background: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
+.review {
+  background: #e67e22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.offer {
+  grid-column: span 2;
+  background: #d35400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.subscribe {
+  grid-column: span 2;
+  background: #c0392b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 20px;
+  background: #1f2d3d;
+  color: white;
+  padding: 20px;
+  justify-content: center;
+}
+.main-content {
+  grid-column: span 3;
+  height: 180px;
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.sidebar {
+  grid-column: span 1;
+  height: 180px;
+  background: #95a5a6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extra {
+  grid-column: span 2;
+  height: 100px;
+  background: #7f8c8d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.promo, .news {
+  grid-column: span 4;
+  background: #9b59b6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  padding: 20px; 
+  max-width: 1400px; /* Увеличено */
+  margin: 0 auto;
+}
+
+

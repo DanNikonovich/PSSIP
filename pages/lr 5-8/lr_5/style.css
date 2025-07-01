@@ -1,0 +1,231 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Шапка (блок 1) */
+.header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.search {
+    flex: 1;
+    text-align: right;
+}
+
+/* Герой-секция (блоки 2-5) */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-item {
+    background-color: #3498db;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-main {
+    flex: 100%;
+    min-height: 300px;
+    background-color: #e74c3c;
+}
+
+.hero-secondary {
+    flex: calc(50% - 0.5rem);
+    min-height: 150px;
+    background-color: #9b59b6;
+}
+
+.hero-cta {
+    flex: 100%;
+    min-height: 100px;
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+/* Фичи (блоки 6-13) */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    flex: calc(25% - 0.75rem);
+    min-height: 150px;
+    background-color: #1abc9c;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Контент (блоки 14-17) */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-main {
+    flex: calc(70% - 0.5rem);
+    min-height: 300px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-sidebar {
+    flex: calc(30% - 0.5rem);
+    min-height: 300px;
+    background-color: #95a5a6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-extra {
+    flex: calc(50% - 0.5rem);
+    min-height: 150px;
+    background-color: #7f8c8d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Отзывы (блоки 18-21) */
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    flex: calc(25% - 0.75rem);
+    min-height: 200px;
+    background-color: #e67e22;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* CTA секция (блоки 22-23) */
+.cta-section {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-left {
+    flex: 60%;
+    min-height: 150px;
+    background-color: #d35400;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.cta-right {
+    flex: 40%;
+    min-height: 150px;
+    background-color: #c0392b;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Подвал (блок 24) */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: calc(25% - 0.75rem);
+    min-height: 100px;
+    background-color: #34495e;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
