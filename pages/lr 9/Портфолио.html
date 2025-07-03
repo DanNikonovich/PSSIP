@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Dan Nikonovich</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- 1. Встроенный скрипт -->
+    <script>
+        // Простые операторы JS
+        let pageViews = 0;
+        const MAX_VIEWS = 1000;
+        pageViews = Math.min(pageViews + 1, MAX_VIEWS);
+        
+        // Функция для показа приветствия
+        function showWelcome() {
+            alert("Добро пожаловать на мое портфолио!");
+        }
+        
+        // Вызываем при загрузке страницы
+        window.onload = showWelcome;
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="title animated">Dan Nikonovich</h1>
+            <p class="subtitle animated" style="animation-delay: 0.2s">Web Designer & Developer</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="about-section">
+            <div class="container">
+                <div class="profile">
+                    <img src="Image/MIUMIU.JPG" alt="Dan Nikonovich" class="profile-image rounded-image float">
+                    <div class="profile-text">
+                        <h2 class="animated" style="animation-delay: 0.4s">Hello everyone, я начинающий web-дизайнер.</h2>
+                        <p class="animated" style="animation-delay: 0.6s">Создаю современные и функциональные веб-интерфейсы с акцентом на пользовательский опыт.</p>
+                        
+                        <!-- Кнопка скачивания архива -->
+                        <a href="#" class="btn-download animated" style="animation-delay: 0.8s" id="downloadBtn">
+                            <i class="fas fa-file-archive"></i> Скачать портфолио (ZIP)
+                        </a>
+                        
+                        <!-- Кнопка для подтверждения -->
+                        <button class="btn-confirm animated" style="animation-delay: 1s" id="confirmBtn">
+                            Подтвердить просмотр
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section class="portfolio-section">
+            <div class="container">
+                <h2 class="section-title animated" style="animation-delay: 1s">Мои работы</h2>
+                <div class="portfolio-item pulse">
+                    <h3>Дизайн сайта <i>JustDoIt</i></h3>
+                    <div class="video-container">
+                        <video controls preload="metadata" poster="Image/Кроссы_ZOOM X.png" class="portfolio-video">
+                            <source type="video/mp4" src="Media/Just Do It 1 lesson.mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule-section">
+            <div class="container">
+                <h3 class="section-title animated" style="animation-delay: 1.2s">Мой график</h3>
+                <p class="animated" style="animation-delay: 1.4s">Если Вы захотите узнать мой не постоянный график, то смотрите ПЗТ-40</p>
+                <a href="http://ggpk.by/Raspisanie/Files/PZT.html" class="btn animated" style="animation-delay: 1.6s">Посмотреть расписание</a>
+            </div>
+        </section>
+
+        <section class="music-section">
+            <div class="container">
+                <h3 class="section-title animated" style="animation-delay: 1.8s">Моя любимая песня</h3>
+                <div class="audio-player pulse">
+                    <audio src="Media/say-yes-to-heaven.mp3" type="audio/mpeg" controls></audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="lists-section">
+            <div class="container">
+                <div class="lists-grid">
+                    <div class="list-card animated" style="animation-delay: 0.2s">
+                        <h4>Маркированный список</h4>
+                        <ul class="styled-list">
+                            <li>TRPO</li>
+                            <li>PSSIP</li>
+                            <li>ZAECH</li>
+                        </ul>
+                    </div>
+
+                    <div class="list-card animated" style="animation-delay: 0.4s">
+                        <h4>Нумерованный список</h4>
+                        <ol class="styled-list">
+                            <li>Первый</li>
+                            <li>Второй</li>
+                            <li>Третий</li>
+                        </ol>
+                    </div>
+
+                    <div class="list-card animated" style="animation-delay: 0.6s">
+                        <h4>Список определений</h4>
+                        <dl class="styled-list">
+                            <dt>HTML</dt>
+                            <dd>Язык разметки гипертекста</dd>
+                            <dt>CSS</dt>
+                            <dd>Таблицы стилей</dd>
+                        </dl>
+                    </div>
+
+                    <div class="list-card animated" style="animation-delay: 0.8s">
+                        <h4>Вложенный список</h4>
+                        <ul class="styled-list">
+                            <li>Фрукты
+                                <ul>
+                                    <li>Яблоко</li>
+                                    <li>Банан</li>
+                                </ul>
+                            </li>
+                            <li>Овощи
+                                <ul>
+                                    <li>Морковь</li>
+                                    <li>Огурец</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="container">
+                <h2 class="section-title animated" style="animation-delay: 1s">Пример таблицы</h2>
+                <div class="table-container pulse">
+                    <table>
+                        <caption>Демонстрационная таблица</caption>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Town</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Аnna</td>
+                                <td>25</td>
+                                <td>Minsk</td>
+                            </tr>
+                            <tr>
+                                <td>Ivan</td>
+                                <td>30</td>
+                                <td>Warshawa</td>
+                            </tr> 
+                            <tr>
+                                <th colspan="3">Unite</th>
+                            </tr>
+                            <tr>
+                                <td>Оne</td>
+                                <td>Two</td>
+                                <td>Тree</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">Ячейка на четыре строки</td>
+                                <td>Ячейка 1</td>
+                                <td>Ячейка 2</td>
+                            </tr>
+                            <tr>
+                                <td>Ячейка 3</td>
+                                <td>Ячейка 4</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Ячейка 5</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Ячейка 6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="#Top" class="nav-link pulse"><i class="fas fa-arrow-up"></i> Наверх</a>
+                
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/__nikonovich__?utm_source=qr&igsh=anl2Ymg5eTFseGZq" class="social-link pulse"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/DanNikonovich/Fine_Sluh.git" class="social-link pulse"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/dikonovichnaniil" class="social-link pulse"><i class="fab fa-linkedin"></i></a>
+            </div>
+            
+            <!-- Кнопка перехода на сайт колледжа -->
+            <button id="collegeBtn" class="college-button pulse">
+                Посетить сайт колледжа
+            </button>
+            
+            <p class="copyright">© 2025 Dan Nikonovich. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключение скрипта через URL -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Скрипт для обработки кнопки перехода -->
+    <script>
+        // Обработчик для кнопки перехода на сайт колледжа
+        $(document).ready(function() {
+            $('#collegeBtn').click(function() {
+                // Подтверждение перехода
+                const isConfirmed = confirm('Вы хотите перейти на официальный сайт колледжа?');
+                
+                if (isConfirmed) {
+                    // Перенаправление на сайт колледжа
+                    window.location.href = 'http://ggpk.by/';
+                } else {
+                    alert('Переход отменен');
+                }
+            });
+        });
+    </script>
+
+    <!-- Остальные скрипты -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/analytics.js" defer></script>
+    <script src="scripts/social.js" async></script>
+</body>
+</html>
