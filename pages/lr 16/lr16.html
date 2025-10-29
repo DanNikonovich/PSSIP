@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООП в JavaScript - Космические корабли</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Космические корабли - Демонстрация ООП</h1>
+            <p>Изучение принципов Объектно-Ориентированного Программирования на практике</p>
+        </header>
+
+        <div class="game-container">
+            <!-- Игровая область -->
+            <div class="game-area">
+                <div class="game-info">
+                    <div class="score">Очки: <span id="score">0</span></div>
+                    <div class="level">Уровень: <span id="level">1</span></div>
+                    <div class="health">Здоровье: <span id="health">100</span></div>
+                </div>
+                <canvas id="gameCanvas" width="800" height="500"></canvas>
+                <div class="controls">
+                    <button id="startBtn" class="btn btn-primary">Старт игры</button>
+                    <button id="pauseBtn" class="btn btn-secondary">Пауза</button>
+                    <button id="resetBtn" class="btn btn-warning">Сброс</button>
+                </div>
+            </div>
+
+            <!-- Теория ООП -->
+            <div class="theory-section">
+                <!-- Секция 1: Суть ООП -->
+                <section class="section">
+                    <h2>1. Суть ООП и отличие от процедурного программирования</h2>
+                    <div class="code-block">
+                        <pre><code>// Процедурный подход
+function movePlayer(x, y) { /* логика */ }
+function attackEnemy() { /* логика */ }
+
+// ООП подход
+class Player {
+    constructor(x, y) { this.x = x; this.y = y; }
+    move() { /* логика */ }
+    attack() { /* логика */ }
+}</code></pre>
+                    </div>
+                    <div class="output" id="output1"></div>
+                    <button class="btn" onclick="demoOOPvsProcedural()">Показать сравнение</button>
+                </section>
+
+                <!-- Секция 2: Классы и объекты -->
+                <section class="section">
+                    <h2>2. Классы и объекты в JavaScript</h2>
+                    <div class="code-block">
+                        <pre><code>// Класс - это шаблон для создания объектов
+class Spaceship {
+    constructor(name) {
+        this.name = name;  // свойство объекта
+    }
+}
+
+// Объект - экземпляр класса
+const ship = new Spaceship("Корабль 1");</code></pre>
+                    </div>
+                    <div class="output" id="output2"></div>
+                    <button class="btn" onclick="demoClassVsObject()">Создать объекты</button>
+                </section>
+
+                <!-- Секция 3: Синтаксис класса -->
+                <section class="section">
+                    <h2>3. Синтаксис класса в JavaScript</h2>
+                    <div class="code-block">
+                        <pre><code>class GameCharacter {
+    // Конструктор
+    constructor(name, health) {
+        this.name = name;
+        this.health = health;
+    }
+
+    // Методы класса
+    attack() {
+        return `${this.name} атакует!`;
+    }
+
+    takeDamage(damage) {
+        this.health -= damage;
+    }
+}</code></pre>
+                    </div>
+                    <div class="output" id="output3"></div>
+                    <button class="btn" onclick="demoClassSyntax()">Демонстрация</button>
+                </section>
+
+                <!-- Секция 4: Создание объектов -->
+                <section class="section">
+                    <h2>4. Создание объектов класса</h2>
+                    <div class="code-block">
+                        <pre><code>// Оператор new создает экземпляр класса
+const player = new GameCharacter("Герой", 100);
+const enemy = new GameCharacter("Враг", 50);
+
+// Можно создавать массивы объектов
+const characters = [
+    new GameCharacter("Воин", 120),
+    new GameCharacter("Маг", 80)
+];</code></pre>
+                    </div>
+                    <div class="output" id="output4"></div>
+                    <button class="btn" onclick="demoObjectCreation()">Создать персонажей</button>
+                </section>
+
+                <!-- Секция 5: Обращение к полям и методам -->
+                <section class="section">
+                    <h2>5. Обращение к полям и методам класса</h2>
+                    <div class="code-block">
+                        <pre><code>class Weapon {
+    constructor(name, damage) {
+        this.name = name;      // поле
+        this.damage = damage;  // поле
+    }
+
+    // метод
+    use() {
+        return `Использовано ${this.name} (урон: ${this.damage})`;
+    }
+}
+
+const sword = new Weapon("Меч", 15);
+console.log(sword.name);    // доступ к полю
+console.log(sword.use());   // вызов метода</code></pre>
+                    </div>
+                    <div class="output" id="output5"></div>
+                    <button class="btn" onclick="demoFieldMethodAccess()">Показать доступ</button>
+                </section>
+
+                <!-- Секция 6: Модификаторы доступа -->
+                <section class="section">
+                    <h2>6. Публичные, приватные и защищённые поля</h2>
+                    <div class="code-block">
+                        <pre><code>class BankAccount {
+    #balance = 0;           // приватное поле
+    _accountType = "basic"; // защищённое поле (соглашение)
+    owner = "";             // публичное поле
+
+    constructor(owner) {
+        this.owner = owner;
+        this.#balance = 1000;
+    }
+
+    // публичный метод
+    getBalance() {
+        return this.#balance; // доступ к приватному полю
+    }
+
+    // приватный метод
+    #validateAmount(amount) {
+        return amount > 0;
+    }
+}</code></pre>
+                    </div>
+                    <div class="output" id="output6"></div>
+                    <button class="btn" onclick="demoAccessModifiers()">Тестировать доступ</button>
+                </section>
+
+                <!-- Секция 7: Static -->
+                <section class="section">
+                    <h2>7. Статические поля и методы</h2>
+                    <div class="code-block">
+                        <pre><code>class GameManager {
+    static #totalPlayers = 0;     // приватное статическое поле
+    static maxPlayers = 4;        // публичное статическое поле
+
+    constructor() {
+        GameManager.#totalPlayers++;
+    }
+
+    // статический метод
+    static getTotalPlayers() {
+        return this.#totalPlayers;
+    }
+
+    static canJoinGame() {
+        return this.#totalPlayers < this.maxPlayers;
+    }
+}</code></pre>
+                    </div>
+                    <div class="output" id="output7"></div>
+                    <button class="btn" onclick="demoStatic()">Демонстрация static</button>
+                </section>
+
+                <!-- Секция 8: Геттеры и сеттеры -->
+                <section class="section">
+                    <h2>8. Геттеры и сеттеры</h2>
+                    <div class="code-block">
+                        <pre><code>class Temperature {
+    constructor(celsius) {
+        this._celsius = celsius;
+    }
+
+    // геттер
+    get fahrenheit() {
+        return this._celsius * 1.8 + 32;
+    }
+
+    // сеттер
+    set fahrenheit(value) {
+        this._celsius = (value - 32) / 1.8;
+    }
+
+    get celsius() {
+        return this._celsius;
+    }
+
+    set celsius(value) {
+        if (value < -273.15) {
+            throw new Error("Температура ниже абсолютного нуля!");
+        }
+        this._celsius = value;
+    }
+}</code></pre>
+                    </div>
+                    <div class="output" id="output8"></div>
+                    <button class="btn" onclick="demoGettersSetters()">Тестировать геттеры/сеттеры</button>
+                </section>
+
+                <!-- Секция 9: Принципы ООП -->
+                <section class="section">
+                    <h2>9. Базовые принципы ООП</h2>
+                    <div class="principles-grid">
+                        <div class="principle">
+                            <h3>Инкапсуляция</h3>
+                            <p>Сокрытие внутренней реализации и предоставление публичного интерфейса</p>
+                        </div>
+                        <div class="principle">
+                            <h3>Наследование</h3>
+                            <p>Создание новых классов на основе существующих с наследованием их свойств</p>
+                        </div>
+                        <div class="principle">
+                            <h3>Полиморфизм</h3>
+                            <p>Возможность использования объектов разных классов через единый интерфейс</p>
+                        </div>
+                    </div>
+                    <div class="output" id="output9"></div>
+                    <button class="btn" onclick="demoOOPPrinciples()">Демонстрация принципов</button>
+                </section>
+
+                <!-- Секция 10: Примеры реализации -->
+                <section class="section">
+                    <h2>10. Реализация принципов ООП в игре</h2>
+                    <div class="output" id="output10"></div>
+                    <button class="btn" onclick="demoImplementation()">Показать реализацию в игре</button>
+                </section>
+
+                <!-- Общие кнопки -->
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="runAllDemos()">🚀 Запустить все демонстрации</button>
+                    <button class="btn btn-secondary" onclick="clearAllOutputs()">🧹 Очистить все</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>ООП в JavaScript - Космические корабли &copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

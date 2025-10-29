@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 Демонстрация объектов в JavaScript</h1>
+            <p>Изучение ООП концепций на практике</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Секция 1: Что такое объекты -->
+            <section class="section" id="section1">
+                <h2>1. Что понимается под объектом в JavaScript?</h2>
+                <div class="code-block">
+                    <pre><code>// Объект - это составной тип данных, 
+// который содержит свойства (ключ-значение) и методы</code></pre>
+                </div>
+                <div class="output" id="output1"></div>
+                <button class="btn" onclick="demoSection1()">Запустить демонстрацию</button>
+            </section>
+
+            <!-- Секция 2: Пользовательские объекты -->
+            <section class="section" id="section2">
+                <h2>2. Пользовательские объекты</h2>
+                <div class="code-block">
+                    <pre><code>// Создание объекта с помощью литерала
+const student = {
+    firstName: "Иван",
+    lastName: "Петров",
+    age: 20,
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};</code></pre>
+                </div>
+                <div class="output" id="output2"></div>
+                <button class="btn" onclick="demoSection2()">Создать объекты</button>
+            </section>
+
+            <!-- Секция 3: Доступ к свойствам -->
+            <section class="section" id="section3">
+                <h2>3. Доступ к свойствам объекта</h2>
+                <div class="code-block">
+                    <pre><code>// Точечная нотация
+student.firstName
+
+// Скобочная нотация  
+student['lastName']
+
+// Динамический доступ
+const prop = 'age';
+student[prop]</code></pre>
+                </div>
+                <div class="output" id="output3"></div>
+                <button class="btn" onclick="demoSection3()">Показать доступ</button>
+            </section>
+
+            <!-- Секция 4: Удаление свойств -->
+            <section class="section" id="section4">
+                <h2>4. Удаление свойств</h2>
+                <div class="code-block">
+                    <pre><code>// Удаление свойства с помощью delete
+delete car.price;
+delete car['color'];</code></pre>
+                </div>
+                <div class="output" id="output4"></div>
+                <button class="btn" onclick="demoSection4()">Удалить свойства</button>
+            </section>
+
+            <!-- Секция 5: Проверка свойств -->
+            <section class="section" id="section5">
+                <h2>5. Проверка существования свойств</h2>
+                <div class="code-block">
+                    <pre><code>// Оператор in
+'name' in employee
+
+// Метод hasOwnProperty()
+employee.hasOwnProperty('position')</code></pre>
+                </div>
+                <div class="output" id="output5"></div>
+                <button class="btn" onclick="demoSection5()">Проверить свойства</button>
+            </section>
+
+            <!-- Секция 6: Перебор свойств -->
+            <section class="section" id="section6">
+                <h2>6. Перебор свойств объекта</h2>
+                <div class="code-block">
+                    <pre><code>// for...in цикл
+for (let key in product) { }
+
+// Object.keys()
+Object.keys(product).forEach(key => { })
+
+// Object.entries()  
+Object.entries(product).forEach(([key, value]) => { })</code></pre>
+                </div>
+                <div class="output" id="output6"></div>
+                <button class="btn" onclick="demoSection6()">Перебрать свойства</button>
+            </section>
+
+            <!-- Дополнительные примеры -->
+            <section class="section" id="section7">
+                <h2>Дополнительные примеры</h2>
+                <div class="output" id="output7"></div>
+                <button class="btn" onclick="demoAdditional()">Показать дополнительные примеры</button>
+            </section>
+
+            <!-- Кнопка для запуска всей демонстрации -->
+            <div class="actions">
+                <button class="btn btn-primary" onclick="runAllDemos()">🚀 Запустить всю демонстрацию</button>
+                <button class="btn btn-secondary" onclick="clearAllOutputs()">🧹 Очистить все результаты</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>JavaScript Objects Demo &copy; 2024</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

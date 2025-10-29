@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    display: grid;
+    gap: 30px;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.section h2 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.code-block {
+    background: #1a202c;
+    color: #cbd5e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    border-left: 4px solid #667eea;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.output {
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 60px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.output.success {
+    border-color: #48bb78;
+    background: #f0fff4;
+}
+
+.output.error {
+    border-color: #f56565;
+    background: #fff5f5;
+}
+
+.btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+}
+
+.actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.8;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.output {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Стили для скроллбара */
+.output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.output::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.output::-webkit-scrollbar-thumb:hover {
+    background: #5a6fd8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .code-block {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Стили для JSON вывода */
+.json-key {
+    color: #d33682;
+    font-weight: bold;
+}
+
+.json-string {
+    color: #2aa198;
+}
+
+.json-number {
+    color: #268bd2;
+}
+
+.json-boolean {
+    color: #b58900;
+}
+
+.json-null {
+    color: #6c71c4;
+}
