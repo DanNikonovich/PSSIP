@@ -1117,21 +1117,22 @@
                         <!-- Подзаголовок с инструкцией -->
                         <p class="form-connect__text">Вкажіть свої дані і ми зв'яжимося з вами найближчим часом</p>
                         <!-- Поля формы -->
+                        <!-- --------------------------ВАДИЖАЦИЯ ЧЕРЕЗ HTML-5-------------------------- -->
                         <div class="form-connect__fields">
                            <!-- Поле для ввода имени -->
                            <div class="form-connect__item">
-                              <label for="full-name">Ваше ім'я</label> 
-                              <input type="text" id="full-name" placeholder="Дмитро Фролов" data-required>
+                               <label for="full-name">Ваше ім'я</label> 
+                               <input type="text" id="full-name" placeholder="Дмитро Фролов" pattern="[a-zA-Zа-яА-ЯїЇіІєЄґҐ'ʼ\s-]+" title="Введіть тільки букви, апостроф, дефіс або пробіли" data-required="en|ru|ua" required>
                            </div>
                            <!-- Поле для ввода телефона -->
                            <div class="form-connect__item">
                               <label for="form-tel">Номер телефону</label> 
-                              <input type="text" id="form-tel" placeholder="+380.." data-required="tel" data-mask="tel">
+                              <input type="text" id="form-tel" placeholder="+380.." data-required="tel" data-mask="tel" required>
                            </div>
                            <!-- Поле для ввода email -->
                            <div class="form-connect__item">
                               <label for="form-email">Ваш e-mail</label> 
-                              <input type="text" id="form-email" placeholder="your_email@gmail.com" data-required="email">
+                              <input type="text" id="form-email" placeholder="your_email@gmail.com" data-required="email" required>
                            </div>
                         </div>
                         <!-- Кнопка отправки формы -->
@@ -1581,8 +1582,8 @@
          </div>
       </div>
       <!-- Подключение JS -->
-      <script type="module" src="./js/app.min.js"></script>
-      <script type="module" src="./js/lab17.js"></script>
+      <script type="module" src="./js/app.min1.js"></script>
+      <script type="module" src="./js/lab171.js"></script>
       <script type="module" src="./js/lab18.js"></script>
       <script type="module" src="./js/lab19-20.js"></script>
    </body>
