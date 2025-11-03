@@ -1,0 +1,178 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Слуховий апарат Microtech Avail 20 RIC 13",
+      "category": "aids",
+      "price": 299.43,
+      "oldPrice": 534.33,
+      "discount": 24,
+      "image": "./img/content/products/img1.png",
+      "features": {
+        "frequency": "170-6700 Гц",
+        "amplification": "70/75 дБ",
+        "caseType": "P-BTE",
+        "channels": 2,
+        "programs": 1
+      },
+      "description": "Сучасний слуховий апарат з цифровою обробкою звуку. Компактний та зручний у використанні.",
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Слуховий апарат Resound ONE 61",
+      "category": "aids",
+      "price": 455.00,
+      "oldPrice": 620.00,
+      "discount": 27,
+      "image": "./img/content/products/img2.png",
+      "features": {
+        "frequency": "150-7100 Гц",
+        "amplification": "80/85 дБ",
+        "caseType": "BTE",
+        "channels": 4,
+        "programs": 3
+      },
+      "description": "Преміум модель з функцією шумоподавлення та Bluetooth-підключенням.",
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Слуховий апарат Audioservice Basic 5",
+      "category": "aids",
+      "price": 189.99,
+      "oldPrice": 250.00,
+      "discount": 24,
+      "image": "./img/content/products/img3.png",
+      "features": {
+        "frequency": "200-6500 Гц",
+        "amplification": "65/70 дБ",
+        "caseType": "ITE",
+        "channels": 1,
+        "programs": 1
+      },
+      "description": "Бюджетна модель для базових потреб. Надійний та простий у використанні.",
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Батарейки для слухових апаратів (10 шт)",
+      "category": "accessory",
+      "price": 15.99,
+      "oldPrice": 19.99,
+      "discount": 20,
+      "image": "./img/content/products/batteries.png",
+      "features": {
+        "type": "ZnAir",
+        "size": "312",
+        "life": "7-10 днів",
+        "voltage": "1.4V"
+      },
+      "description": "Надійні батарейки тривалого терміну служби. Упаковка 10 штук.",
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Чохол для зберігання слухових апаратів",
+      "category": "accessory",
+      "price": 12.50,
+      "oldPrice": 15.00,
+      "discount": 17,
+      "image": "./img/content/products/case.png",
+      "features": {
+        "material": "Силикон",
+        "color": "Синій",
+        "size": "Універсальний",
+        "waterResistant": "Так"
+      },
+      "description": "Захищає ваші слухові апарати від пилу, вологи та механічних пошкоджень.",
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Очисник слухових апаратів",
+      "category": "accessory",
+      "price": 8.99,
+      "oldPrice": 11.99,
+      "discount": 25,
+      "image": "./img/content/products/cleaner.png",
+      "features": {
+        "type": "Набір для чищення",
+        "components": "Щіточка, магніт, паличка",
+        "purpose": "Щоденне чищення"
+      },
+      "description": "Професійний набір для догляду та чищення слухових апаратів.",
+      "inStock": true
+    },
+    {
+      "id": 7,
+      "name": "Слуховий апарат Phonak Audeo P90",
+      "category": "aids",
+      "price": 689.00,
+      "oldPrice": 850.00,
+      "discount": 19,
+      "image": "./img/content/products/img4.png",
+      "features": {
+        "frequency": "100-8000 Гц",
+        "amplification": "85/90 дБ",
+        "caseType": "RIC",
+        "channels": 6,
+        "programs": 4
+      },
+      "description": "Інтелектуальний слуховий апарат з технологією штучного інтелекту.",
+      "inStock": false
+    },
+    {
+      "id": 8,
+      "name": "Вушні вкладки індивідуальні",
+      "category": "accessory",
+      "price": 45.00,
+      "oldPrice": 55.00,
+      "discount": 18,
+      "image": "./img/content/products/earmold.png",
+      "features": {
+        "material": "Гіпоалергенний силікон",
+        "type": "Індивідуальні",
+        "manufacturing": "2 години",
+        "comfort": "Максимальний"
+      },
+      "description": "Індивідуально виготовлені вушні вкладки для ідеальної посадки.",
+      "inStock": true
+    },
+    {
+      "id": 9,
+      "name": "Слуховий апарат Widex Moment 440",
+      "category": "aids",
+      "price": 599.00,
+      "oldPrice": 720.00,
+      "discount": 17,
+      "image": "./img/content/products/img5.png",
+      "features": {
+        "frequency": "120-7500 Гц",
+        "amplification": "82/87 дБ",
+        "caseType": "BTE",
+        "channels": 5,
+        "programs": 3
+      },
+      "description": "Інноваційна модель з природним звучанням та швидкою обробкою звуку.",
+      "inStock": true
+    },
+    {
+      "id": 10,
+      "name": "Система Bluetooth для слухових апаратів",
+      "category": "accessory",
+      "price": 89.99,
+      "oldPrice": 110.00,
+      "discount": 18,
+      "image": "./img/content/products/bluetooth.png",
+      "features": {
+        "connectivity": "Bluetooth 5.0",
+        "range": "10 метрів",
+        "battery": "8 годин",
+        "devices": "2 одночасно"
+      },
+      "description": "Дозволяє підключати слухові апарати до смартфона, ТВ та інших пристроїв.",
+      "inStock": true
+    }
+  ]
+}
