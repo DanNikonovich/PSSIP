@@ -346,7 +346,7 @@
                 // Показываем статистику хранилища
                 this.showStorageInfo();
             } else {
-                this.showNotification('Помилка при збереженні в Local Storage', 'error');
+             //   this.showNotification('Помилка при збереженні в Local Storage', 'error');
             }
         }
 
