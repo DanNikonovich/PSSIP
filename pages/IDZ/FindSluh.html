@@ -16,6 +16,9 @@
       <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
       <script src="./js/accordion.js"></script>
       <script src="./js/btn.js"></script>
+      <!-- Добавить после существующих скриптов -->
+      <script src="./js/catalog.js"></script>
+      <script src="./js/cart.js"></script>
       <title>Main page</title>
    </head>
    <body>
@@ -61,6 +64,15 @@
                            </svg> 
                            <span>Instagram</span>
                         </a>
+                        <!-- Иконка корзины -->
+                        <div class="cart-toggle">
+                           <button class="cart-icon" aria-label="Кошик покупок">
+                              <svg class="icon-cart" width="24" height="24" viewBox="0 0 24 24">
+                                 <path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                              </svg>
+                              <span class="cart-count">0</span>
+                           </button>
+                        </div>
                      </address>
                       <!-- Кнопка меню для мобильных устройств -->
                      <button class="top-header__icon _menu-icon" type="button">
@@ -69,7 +81,7 @@
                   </div>
                </div>
             </div>
-              <!-- Нижняя часть шапки с основным меню навигации -->
+            <!-- Нижняя часть шапки -->
             <div class="header__bottom bottom-header">
                <div class="bottom-header__container">
                   <div class="bottom-header__inner">
@@ -77,7 +89,7 @@
                      <div class="bottom-header__menu menu _menu-header">
                         <nav class="menu__navigation">
                            <ul class="menu__list">
-                                    <!-- Пункты меню -->
+                              <!-- Пункты меню -->
                               <li class="menu__item _menu-item"><a href="#products" class="menu__link _menu-link _active-link">АКЦІЇ</a></li>
                               <li class="menu__item _menu-item"><a href="#about" class="menu__link _menu-link">ПРО НАС</a></li>
                               <li class="menu__item _menu-item"><a href="#services" class="menu__link _menu-link">ПОСЛУГИ</a></li>
@@ -92,7 +104,7 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div>      
          </header>
          <!-- Тело -->
          <main>
@@ -337,13 +349,26 @@
                         <h2 class="top-products__title section-title">НАШІ ПРОДУКТИ</h2>
                         <p class="top-products__sub-title section-sub-title">Наші слухові апарати - ваш шлях до кращого слуху</p>
                         <p class="top-products__text">Ми забезпечуємо найкращі рішення для проблем зі слухом завдяки копанню та виготовленню слухових апаратів.</p>
-                        <!-- Кнопки управления табами -->
+
+                        <!-- Добавить элементы управления -->
+                        <div class="products-controls" style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+                           <input type="text" class="products-search" placeholder="Пошук товарів..." style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; flex: 1; min-width: 200px;">
+                           <select class="products-sort" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;">
+                              <option value="default">Сортування</option>
+                              <option value="price-asc">Ціна (від низької)</option>
+                              <option value="price-desc">Ціна (від високої)</option>
+                              <option value="name-asc">Назва (А-Я)</option>
+                              <option value="name-desc">Назва (Я-А)</option>
+                              <option value="discount">Знижка</option>
+                           </select>
+                        </div>
+                        <!-- Обновленные кнопки категорий -->
                         <div class="top-products__control">
-                           <button class="top-products__caption top-products__accessory _active-tab-caption" type="button" data-tab-caption="accessory">Аксесуари</button> 
+                           <button class="top-products__caption top-products__all _active-tab-caption" type="button" data-tab-caption="all">Всі товари</button>
                            <button class="top-products__caption top-products__aids" type="button" data-tab-caption="aids">Слухові апарати</button>
+                           <button class="top-products__caption top-products__accessory" type="button" data-tab-caption="accessory">Аксесуари</button>
                         </div>
                      </div>
-                     <!-- Изображение, иллюстрирующее продукцию -->
                      <div class="top-products__image _imw">
                         <picture>
                            <source srcset="./img/content/products/main-img.webp" type="image/webp">
@@ -351,9 +376,12 @@
                         </picture>
                      </div>
                   </div>
+               </div>
+               
                   <!-- Контент таба "Аксесуари" (по умолчанию активен) -->
                   <div class="products__body">
-                     <div class="products__content products__accessory _active-tab-content" data-tab-content="accessory">
+                     <!-- Контент будет генерироваться динамически через JavaScript -->
+                     <div class="products__content products__all _active-tab-content" data-tab-content="all">
                         <!-- Слайдер с карточками товаров -->
                         <div class="products__slider slider-products">
                            <div class="slider-products__wrapper">
@@ -733,7 +761,6 @@
                                        <use href="./sprites/sprite.svg#icon-arrow"></use>
                                     </svg>
                                  </button>
-                                 <!-- Кнопка для перехода к следующему слайду --> 
                                  <button type="button" class="slider-products__button slider-products__button_next button-slider" aria-label="Наступний слайд">
                                     <svg class="icon-arrow">
                                        <use href="./sprites/sprite.svg#icon-arrow"></use>
@@ -1102,6 +1129,387 @@
                            </div>
                         </div>
                      </div>
+                     <!-- Вкладка "Аксессуары" -->
+                     <div class="products__content products__accessory" data-tab-content="accessory">
+                        <div class="products__slider slider-products">
+                           <div class="slider-products__wrapper">
+                              <!-- Карточка товара -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <div class="slide-products__inner">
+                                    <!-- Верх карточки: изображение, по клику открывает модальное окно -->
+                                    <div class="slide-products__header">
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Характеристики товара -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу:
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Карточка продукта в слайдере -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <!-- Внутренний блок карточки -->
+                                 <div class="slide-products__inner">
+                                    <!-- Заголовок карточки с изображением товара -->
+                                    <div class="slide-products__header">
+                                       <!-- Клик по изображению открывает модальное окно с подробностями -->
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Основная информация о товаре -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <!-- Список характеристик -->
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу: 
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Карточка продукта в слайдере -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <!-- Внутренний блок карточки -->
+                                 <div class="slide-products__inner">
+                                    <!-- Заголовок карточки с изображением товара -->
+                                    <div class="slide-products__header">
+                                       <!-- Клик по изображению открывает модальное окно с подробностями -->
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Основная информация о товаре -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <!-- Список характеристик -->
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу: 
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Карточка продукта в слайдере -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <!-- Внутренний блок карточки -->
+                                 <div class="slide-products__inner">
+                                    <!-- Заголовок карточки с изображением товара -->
+                                    <div class="slide-products__header">
+                                       <!-- Клик по изображению открывает модальное окно с подробностями -->
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Основная информация о товаре -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <!-- Список характеристик -->
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу: 
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Карточка продукта в слайдере -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <!-- Внутренний блок карточки -->
+                                 <div class="slide-products__inner">
+                                    <!-- Заголовок карточки с изображением товара -->
+                                    <div class="slide-products__header">
+                                       <!-- Клик по изображению открывает модальное окно с подробностями -->
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Основная информация о товаре -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <!-- Список характеристик -->
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу: 
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Карточка продукта в слайдере -->
+                              <div class="slider-products__slide slide-products _animated">
+                                 <!-- Внутренний блок карточки -->
+                                 <div class="slide-products__inner">
+                                    <!-- Заголовок карточки с изображением товара -->
+                                    <div class="slide-products__header">
+                                       <!-- Клик по изображению открывает модальное окно с подробностями -->
+                                       <a href="#" class="slide-products__image _imw" data-modal="modal-product" aria-controls="modal-product" aria-label="Кнопка відкриває модальне вікно з описом товару">
+                                          <picture>
+                                             <source srcset="./img/content/products/img2.webp" type="image/webp">
+                                             <img src="./img/content/about/img2.png" alt="слуховий апарат">
+                                          </picture>
+                                       </a>
+                                    </div>
+                                    <!-- Основная информация о товаре -->
+                                    <div class="slide-products__body">
+                                       <h3 class="slide-products__title">Слуховий апарат Microtech Avail 20 RIC 13</h3>
+                                       <!-- Список характеристик -->
+                                       <ul class="slide-products__list">
+                                          <li class="slide-products__item">Частотний діапазон, Гц: 
+                                             <span>170-6700</span>
+                                          </li>
+                                          <li class="slide-products__item">Макс підсилення, дБ: 
+                                             <span>70/75</span>
+                                          </li>
+                                          <li class="slide-products__item">Тип корпусу: 
+                                             <span>P-BTE</span>
+                                          </li>
+                                          <li class="slide-products__item">К-сть каналів: 
+                                             <span>2</span>
+                                          </li>
+                                          <li class="slide-products__item">Кількість програм: 
+                                             <span>1</span>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <!-- Нижняя часть карточки с ценой и кнопкой -->
+                                    <div class="slide-products__footer">
+                                       <!-- Блок цены -->
+                                       <div class="slide-products__price price-product">
+                                          <!-- Старая цена и скидка -->
+                                          <div class="price-product__old">
+                                             <p class="price-product__old-value">$
+                                                <span>534,33</span>
+                                             </p>
+                                             <p class="price-product__sale">-24%</p>
+                                          </div>
+                                          <!-- Новая цена -->
+                                          <p class="price-product__new">$
+                                             <span>299,43</span>
+                                          </p>
+                                       </div>
+                                        <!-- Кнопка для связи -->
+                                       <button class="slide-products__button button button_primary" type="button">
+                                          <svg class="icon-phone-fill">
+                                             <use href="./sprites/sprite.svg#icon-phone-fill"></use>
+                                          </svg> Звязатись з нами
+                                       </button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="slider-products__controll">
+                              <div class="slider-products__pagination"></div>
+                              <div class="slider-products__navigation">
+                                 <button type="button" class="slider-products__button slider-products__button_prev button-slider" aria-label="Попередній слайд">
+                                    <svg class="icon-arrow"><use href="./sprites/sprite.svg#icon-arrow"></use></svg>
+                                 </button>
+                                 <button type="button" class="slider-products__button slider-products__button_next button-slider" aria-label="Наступний слайд">
+                                    <svg class="icon-arrow"><use href="./sprites/sprite.svg#icon-arrow"></use></svg>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
             </section>
@@ -1373,6 +1781,35 @@
                </iframe>
             </section>
          </main>
+          <!-- Модальное окно корзины -->
+            <div id="cart-modal" class="cart-modal">
+               <div class="cart-modal-overlay"></div>
+               <div class="cart-modal-content">
+                  <div class="cart-modal-header">
+                     <h3>Кошик покупок</h3>
+                     <button class="cart-close">&times;</button>
+                  </div>
+                  <div class="cart-modal-body">
+                     <div class="cart-empty">
+                        <p>Ваш кошик порожній</p>
+                     </div>
+                     <div class="cart-items">
+                        <div class="cart-items-list" style="display: none;">
+                           <!-- Товары будут добавляться динамически -->
+                        </div>
+                     </div>
+                  </div>
+                  <div class="cart-modal-footer">
+                     <div class="cart-total" style="display: none;">
+                        Загальна сума: $<span class="total-price">0.00</span>
+                     </div>
+                     <div class="cart-actions">
+                        <button class="button button_secondary clear-cart">Очистити кошик</button>
+                        <button class="button button_primary checkout-btn">Оформити замовлення</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
          <footer class="footer" id="contacts">
             <!-- Верхняя часть футера: логотип и описание компании -->
             <div class="footer__top top-footer">
@@ -1585,6 +2022,7 @@
       <script type="module" src="./js/app.min.js"></script>
       <script type="module" src="./js/lab17.js"></script>
       <script type="module" src="./js/lab18.js"></script>
-      <script type="module" src="./js/lab19-20.js"></script>
+      <script type="module" src="./js/lab19-20cookie.js"></script>
+      <script type="module" src="./js/lab19-20localstorage.js"></script>
    </body>
 </html>
